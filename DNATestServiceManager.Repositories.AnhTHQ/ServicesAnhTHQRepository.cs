@@ -54,10 +54,7 @@ public class ServicesAnhTHQRepository : GenericRepository<ServicesAnhTHQReposito
 
     public async Task<int> UpdateAsync(ServiceAnhThq entity)
     {
-        var existing = await _context.ServicesAnhThqs.FindAsync(entity.ServiceAnhThqid);
-        if (existing == null) return 0;
-
-        _context.Entry(existing).CurrentValues.SetValues(entity);
+        _context.ServicesAnhThqs.Update(entity);
         return await _context.SaveChangesAsync();
     }
 

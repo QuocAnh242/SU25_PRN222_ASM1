@@ -11,10 +11,10 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form id="editForm">
+        <form id="editForm" method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="ServicesAnhThq.ServiceAnhThqid" id="ServicesAnhThq_ServiceAnhThqid" />
-            <div class="form-group">
+            <input type="hidden" name="ServicesAnhThq.ServiceAnhThqid" value="@Model.ServicesAnhThq.ServiceAnhThqid" />
+                <div class="form-group">
                 <label asp-for="ServicesAnhThq.ServiceName" class="control-label"></label>
                 <input asp-for="ServicesAnhThq.ServiceName" class="form-control" id="ServicesAnhThq_ServiceName" />
                 <span asp-validation-for="ServicesAnhThq.ServiceName" class="text-danger"></span>
@@ -79,40 +79,43 @@
             .withUrl("/DNATestServiceManagerHub")
             .build();
 
-        connection.start().then(() => {
-            console.log("Connected to SignalR Hub.");
-        }).catch(err => console.error(err.toString()));
+        connection.start()
+            .then(() => {
+                console.log("Connected to SignalR Hub.");
 
-        document.getElementById("btnHubUpdate").addEventListener("click", function () {
-            const dataObj = {
-                serviceAnhThqid: document.querySelector("[name='ServicesAnhThq.ServiceAnhThqid']").value,
-                serviceName: document.querySelector("[name='ServicesAnhThq.ServiceName']").value,
-                serviceType: document.querySelector("[name='ServicesAnhThq.ServiceType']").value,
-                description: document.querySelector("[name='ServicesAnhThq.Description']").value,
-                category: document.querySelector("[name='ServicesAnhThq.Category']").value,
-                createdDate: document.querySelector("[name='ServicesAnhThq.CreatedDate']").value,
-                createdBy: document.querySelector("[name='ServicesAnhThq.CreatedBy']").value,
-                modifiedDate: document.querySelector("[name='ServicesAnhThq.ModifiedDate']").value,
-                modifiedBy: document.querySelector("[name='ServicesAnhThq.ModifiedBy']").value,
-                isActive: document.querySelector("[name='ServicesAnhThq.IsActive']").checked
-            };
+                // Gắn sự kiện click SAU khi connection đã sẵn sàng
+                document.getElementById("btnHubUpdate").addEventListener("click", function () {
+                    const dataObj = {
+                        serviceAnhThqid: document.querySelector("[name='ServicesAnhThq.ServiceAnhThqid']").value,
+                        serviceName: document.querySelector("[name='ServicesAnhThq.ServiceName']").value,
+                        serviceType: document.querySelector("[name='ServicesAnhThq.ServiceType']").value,
+                        description: document.querySelector("[name='ServicesAnhThq.Description']").value,
+                        category: document.querySelector("[name='ServicesAnhThq.Category']").value,
+                        createdDate: document.querySelector("[name='ServicesAnhThq.CreatedDate']").value,
+                        createdBy: document.querySelector("[name='ServicesAnhThq.CreatedBy']").value,
+                        modifiedDate: document.querySelector("[name='ServicesAnhThq.ModifiedDate']").value,
+                        modifiedBy: document.querySelector("[name='ServicesAnhThq.ModifiedBy']").value,
+                        isActive: document.querySelector("[name='ServicesAnhThq.IsActive']").checked
+                    };
 
-            const jsonString = JSON.stringify(dataObj);
+                    const jsonString = JSON.stringify(dataObj);
 
-            connection.invoke("HubUpdate_ServicesAnhTHQ", jsonString)
-                .then(() => {
-                    console.log("Hub update sent");
-                    alert("Hub update successful!");
-                    location.href = "/AnhTHQ/ServicesAnhThq/Index";
-                })
-                .catch(err => console.error(err.toString()));
-        });
-        catch(err => console.error(err.toString()));
-        });
+                    connection.invoke("HubUpdate_ServicesAnhTHQ", jsonString)
+                        .then(() => {
+                            console.log("Hub update sent");
+                            alert("Hub update successful!");
+                            location.href = "/ServicesAnhThq/Index";
+                        })
+                        .catch(err => console.error("Hub invoke error: " + err.toString()));
+                });
 
-        // Optional: Receive broadcast updates
+            })
+            .catch(err => console.error("Connection start error: " + err.toString()));
+
+        // Optional broadcast
         connection.on("Receiver_UpdateServicesAnhTHQ", function (item) {
             console.log("Broadcast: service updated:", item);
         });
     </script>
+
 }

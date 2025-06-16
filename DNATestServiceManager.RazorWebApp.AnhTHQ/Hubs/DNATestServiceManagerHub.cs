@@ -42,6 +42,7 @@ namespace DNATestServiceManager.RazorWebApp.AnhTHQ.Hubs
 
             // Cập nhật dữ liệu vào DB trước
             await _servicesAnhTHQService.UpdateAsync(item);
+            Console.WriteLine("Hub Update ID: " + item.ServiceAnhThqid);
 
             // Sau đó gửi thông tin cập nhật cho các client
             await Clients.All.SendAsync("Receiver_UpdateServicesAnhTHQ", item);

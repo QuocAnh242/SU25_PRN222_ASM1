@@ -127,5 +127,37 @@
         $('#servicesAnhTHQTBodyId').append(trServicesAnhTHQ);
     });
 
+    // Update
+        connection.on("Receiver_UpdateServicesAnhTHQ", function (item) {
+        console.log("Received update:", item); // ✅ Check data format
+
+        const $row = $(`#servicesAnhTHQTBodyId tr[id='${item.serviceAnhThqid}']`);
+
+        if ($row.length === 0) {
+            console.warn("Row not found for ID", item.serviceAnhThqid);
+            return;
+        }
+
+        const newRow = `
+            <td>${item.serviceName || ''}</td>
+            <td>${item.serviceType || ''}</td>
+            <td>${item.description || ''}</td>
+            <td>${item.category || ''}</td>
+            <td>${item.createdDate ? new Date(item.createdDate).toLocaleDateString() : ''}</td>
+            <td>${item.createdBy || ''}</td>
+            <td>${item.modifiedDate ? new Date(item.modifiedDate).toLocaleDateString() : ''}</td>
+            <td>${item.modifiedBy || ''}</td>
+            <td>${item.isActive}</td>
+            <td>
+                <a href="/ServicesAnhThq/Edit?id=${item.serviceAnhThqid}">Edit</a> |
+                <a href="/ServicesAnhThq/Details?id=${item.serviceAnhThqid}">Details</a> |
+                <a href="/ServicesAnhThq/Delete?id=${item.serviceAnhThqid}">Delete</a>
+            </td>
+        `;
+
+        $row.html(newRow);
+    });
+
+
 
 </script>
