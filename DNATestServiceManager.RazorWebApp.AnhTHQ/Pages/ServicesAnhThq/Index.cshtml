@@ -1,0 +1,131 @@
+﻿@page
+@model DNATestServiceManager.RazorWebApp.AnhTHQ.Pages.ServicesAnhThq.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ServicesAnhThq[0].ServiceName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServicesAnhThq[0].ServiceType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServicesAnhThq[0].Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServicesAnhThq[0].Category)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServicesAnhThq[0].CreatedDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServicesAnhThq[0].CreatedBy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServicesAnhThq[0].ModifiedDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServicesAnhThq[0].ModifiedBy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServicesAnhThq[0].IsActive)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody id="servicesAnhTHQTBodyId">
+        @foreach (var item in Model.ServicesAnhThq)
+        {
+            <tr id="@item.ServiceAnhThqid">
+                <td>
+                    @Html.DisplayFor(modelItem => item.ServiceName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ServiceType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Category)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreatedDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreatedBy)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ModifiedDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ModifiedBy)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsActive)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.ServiceAnhThqid">Edit</a> |
+                    <a asp-page="./Details" asp-route-id="@item.ServiceAnhThqid">Details</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.ServiceAnhThqid">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<script src="~/js/signalr/dist/browser/signalr.js"></script>
+<script src="~/lib/microsoft/signalr/dist/browser/signalr.js"></script>
+<script>
+    "use strict";
+
+    var connection = new signalR.HubConnectionBuilder().withUrl("/DNATestServiceManagerHub").build();
+
+    connection.start().then(function () {
+        console.log("AnhTHQ: Connected to the SignalR Hub");
+    }).catch(function (err) {
+        return console.error(err.toString());
+    });
+
+    // DeleteHub
+        connection.on("Receiver_DeleteServicesAnhTHQ", function (ServiceAnhThqid) {
+        $('#servicesAnhTHQTBodyId').find(`tr[id='${ServiceAnhThqid}']`).remove();
+    });
+
+    // CreateHub
+        connection.on("Receiver_CreateServicesAnhTHQ", function (itemJson) {
+        const item = JSON.parse(itemJson);
+
+        const trServicesAnhTHQ = `
+            <tr id="${item.ServiceAnhThqid}">
+                <td>${item.ServiceName || ''}</td>
+                <td>${item.ServiceType || ''}</td>
+                <td>${item.Description || ''}</td>
+                <td>${item.Category || ''}</td>
+                <td>${item.CreatedDate ? new Date(item.CreatedDate).toLocaleDateString() : ''}</td>
+                <td>${item.CreatedBy || ''}</td>
+                <td>${item.ModifiedDate ? new Date(item.ModifiedDate).toLocaleDateString() : ''}</td>
+                <td>${item.ModifiedBy || ''}</td>
+                <td>${item.IsActive}</td>
+                <td>
+                    <a href="/ServicesAnhThq/Edit?id=${item.ServiceAnhThqid}">Edit</a> |
+                    <a href="/ServicesAnhThq/Details?id=${item.ServiceAnhThqid}">Details</a> |
+                    <a href="/ServicesAnhThq/Delete?id=${item.ServiceAnhThqid}">Delete</a>
+                </td>
+            </tr>
+        `;
+
+        $('#servicesAnhTHQTBodyId').append(trServicesAnhTHQ);
+    });
+
+
+</script>

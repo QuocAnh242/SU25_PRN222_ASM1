@@ -1,0 +1,109 @@
+﻿@page
+@model DNATestServiceManager.RazorWebApp.AnhTHQ.Pages.ServicesAnhThq.DetailsModel
+
+@{
+    ViewData["Title"] = "Service Details";
+}
+
+<div class="container mt-4">
+    <h2 class="mb-4 text-primary">Service Details</h2>
+
+    <div class="card shadow-sm rounded">
+        <div class="card-body">
+            <dl class="row" id="ServicesAnhTHQID">
+                <dt class="col-sm-3 font-weight-bold">
+                    @Html.DisplayNameFor(model => model.ServicesAnhThq.ServiceName)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.ServicesAnhThq.ServiceName)
+                </dd>
+
+                <dt class="col-sm-3 font-weight-bold">
+                    @Html.DisplayNameFor(model => model.ServicesAnhThq.ServiceType)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.ServicesAnhThq.ServiceType)
+                </dd>
+
+                <dt class="col-sm-3 font-weight-bold">
+                    @Html.DisplayNameFor(model => model.ServicesAnhThq.Description)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.ServicesAnhThq.Description)
+                </dd>
+
+                <dt class="col-sm-3 font-weight-bold">
+                    @Html.DisplayNameFor(model => model.ServicesAnhThq.Category)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.ServicesAnhThq.Category)
+                </dd>
+
+                <dt class="col-sm-3 font-weight-bold">
+                    @Html.DisplayNameFor(model => model.ServicesAnhThq.CreatedDate)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.ServicesAnhThq.CreatedDate)
+                </dd>
+
+                <dt class="col-sm-3 font-weight-bold">
+                    @Html.DisplayNameFor(model => model.ServicesAnhThq.CreatedBy)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.ServicesAnhThq.CreatedBy)
+                </dd>
+
+                <dt class="col-sm-3 font-weight-bold">
+                    @Html.DisplayNameFor(model => model.ServicesAnhThq.ModifiedDate)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.ServicesAnhThq.ModifiedDate)
+                </dd>
+
+                <dt class="col-sm-3 font-weight-bold">
+                    @Html.DisplayNameFor(model => model.ServicesAnhThq.ModifiedBy)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.ServicesAnhThq.ModifiedBy)
+                </dd>
+
+                <dt class="col-sm-3 font-weight-bold">
+                    @Html.DisplayNameFor(model => model.ServicesAnhThq.IsActive)
+                </dt>
+                <dd class="col-sm-9">
+                    @if (Model.ServicesAnhThq.IsActive == true)
+                    {
+                        <span class="text-success fw-bold">✅ Active</span>
+                    }
+                    else
+                    {
+                        <span class="text-danger fw-bold">❌ Inactive</span>
+                    }
+                </dd>
+            </dl>
+        </div>
+    </div>
+
+    <div class="mt-4">
+        <a class="btn btn-primary" asp-page="./Edit" asp-route-id="@Model.ServicesAnhThq.ServiceAnhThqid">Edit</a>
+        <a class="btn btn-secondary ml-2" asp-page="./Index">Back to List</a>
+    </div>
+
+    <script>
+        "use strict";
+
+        var connection = new signalR.HubConnectionBuilder().withUrl("/DNATestServiceManagerHub").build();
+
+        connection.start().then(function () {
+            console.log("AnhTHQ: Connected to the SignalR Hub");
+        }).catch(function (err) {
+            return console.error(err.toString());
+        });
+
+        connection.on("Receiver_DeleteServicesAnhTHQ", function (CashDepositSlipId) {
+            document.getElementById("servicesAnhTHQTBodyId").innerHTML = "This item had deleted";
+        });
+
+
+    </script>
+</div>

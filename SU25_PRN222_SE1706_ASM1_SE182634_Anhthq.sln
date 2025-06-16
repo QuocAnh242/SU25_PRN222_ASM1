@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35327.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DNATestServiceManager.Repositories.AnhTHQ", "DNATestServiceManager.Repositories.AnhTHQ\DNATestServiceManager.Repositories.AnhTHQ.csproj", "{CA683811-CC59-47E9-BC21-14B25C956F49}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DNATestServiceManager.Services.AnhTHQ", "DNATestServiceManager.Services.AnhTHQ\DNATestServiceManager.Services.AnhTHQ.csproj", "{ECEACF64-2ED1-4D4A-895D-58EC474CC75E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DNATestServiceManager.RazorWebApp.AnhTHQ", "DNATestServiceManager.RazorWebApp.AnhTHQ\DNATestServiceManager.RazorWebApp.AnhTHQ.csproj", "{CDEA944B-7FE4-49A4-B753-21D3E4D4196E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CA683811-CC59-47E9-BC21-14B25C956F49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA683811-CC59-47E9-BC21-14B25C956F49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA683811-CC59-47E9-BC21-14B25C956F49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA683811-CC59-47E9-BC21-14B25C956F49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ECEACF64-2ED1-4D4A-895D-58EC474CC75E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECEACF64-2ED1-4D4A-895D-58EC474CC75E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECEACF64-2ED1-4D4A-895D-58EC474CC75E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECEACF64-2ED1-4D4A-895D-58EC474CC75E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDEA944B-7FE4-49A4-B753-21D3E4D4196E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDEA944B-7FE4-49A4-B753-21D3E4D4196E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDEA944B-7FE4-49A4-B753-21D3E4D4196E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDEA944B-7FE4-49A4-B753-21D3E4D4196E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1022CA10-C0F7-43D5-843A-0F0D772A351F}
+	EndGlobalSection
+EndGlobal

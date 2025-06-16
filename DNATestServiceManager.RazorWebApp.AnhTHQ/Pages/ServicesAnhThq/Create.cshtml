@@ -1,0 +1,116 @@
+﻿@page
+@model DNATestServiceManager.RazorWebApp.AnhTHQ.Pages.ServicesAnhThq.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>ServicesAnhThq</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ServicesAnhThq.ServiceName" class="control-label"></label>
+                <input asp-for="ServicesAnhThq.ServiceName" class="form-control" />
+                <span asp-validation-for="ServicesAnhThq.ServiceName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServicesAnhThq.ServiceType" class="control-label"></label>
+                <input asp-for="ServicesAnhThq.ServiceType" class="form-control" />
+                <span asp-validation-for="ServicesAnhThq.ServiceType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServicesAnhThq.Description" class="control-label"></label>
+                <input asp-for="ServicesAnhThq.Description" class="form-control" />
+                <span asp-validation-for="ServicesAnhThq.Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServicesAnhThq.Category" class="control-label"></label>
+                <input asp-for="ServicesAnhThq.Category" class="form-control" />
+                <span asp-validation-for="ServicesAnhThq.Category" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServicesAnhThq.CreatedDate" class="control-label"></label>
+                <input asp-for="ServicesAnhThq.CreatedDate" class="form-control" />
+                <span asp-validation-for="ServicesAnhThq.CreatedDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServicesAnhThq.CreatedBy" class="control-label"></label>
+                <input asp-for="ServicesAnhThq.CreatedBy" class="form-control" />
+                <span asp-validation-for="ServicesAnhThq.CreatedBy" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServicesAnhThq.ModifiedDate" class="control-label"></label>
+                <input asp-for="ServicesAnhThq.ModifiedDate" class="form-control" />
+                <span asp-validation-for="ServicesAnhThq.ModifiedDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServicesAnhThq.ModifiedBy" class="control-label"></label>
+                <input asp-for="ServicesAnhThq.ModifiedBy" class="form-control" />
+                <span asp-validation-for="ServicesAnhThq.ModifiedBy" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServicesAnhThq.IsActive" class="control-label"></label>
+                <input asp-for="ServicesAnhThq.IsActive" class="form-control" />
+                <span asp-validation-for="ServicesAnhThq.IsActive" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="button" id="btnHubCreate" value="Create by SignalRHub" class="btn btn-success" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script src="~/lib/microsoft/signalr/dist/browser/signalr.js"></script>
+    <script>
+        var connection = new signalR.HubConnectionBuilder()
+            .withUrl("/DNATestServiceManagerHub")
+            .build();
+
+        connection.start().then(function () {
+            console.log("AnhTHQ: Connected to the SignalR Hub");
+        }).catch(function (err) {
+            return console.error(err.toString());
+        });
+
+        document.getElementById("btnHubCreate").addEventListener("click", function (event) {
+            var dataObj = {
+                ServiceName: document.getElementById("ServicesAnhThq_ServiceName").value,
+                ServiceType: document.getElementById("ServicesAnhThq_ServiceType").value,
+                Description: document.getElementById("ServicesAnhThq_Description").value,
+                Category: document.getElementById("ServicesAnhThq_Category").value,
+                CreatedDate: document.getElementById("ServicesAnhThq_CreatedDate").value,
+                CreatedBy: document.getElementById("ServicesAnhThq_CreatedBy").value,
+                ModifiedDate: document.getElementById("ServicesAnhThq_ModifiedDate").value,
+                ModifiedBy: document.getElementById("ServicesAnhThq_ModifiedBy").value,
+                IsActive: document.getElementById("ServicesAnhThq_IsActive").value === "true"
+            };
+
+            console.log(dataObj);
+
+                connection.invoke("HubCreate_ServicesAnhTHQ", JSON.stringify(dataObj))
+        .catch(function (err) {
+            return console.error(err.toString());
+        });
+
+
+            event.preventDefault();
+        });
+    </script>
+
+}
+
+
