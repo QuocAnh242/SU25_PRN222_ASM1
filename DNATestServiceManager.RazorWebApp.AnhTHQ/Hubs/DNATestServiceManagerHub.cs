@@ -27,14 +27,17 @@ namespace DNATestServiceManager.RazorWebApp.AnhTHQ.Hubs
             var item = JsonConvert.DeserializeObject<ServiceAnhThq>(jsonData);
             item.CreatedDate = DateTime.Now;
 
-            // Save to DB via DI service
             var id = await _servicesAnhTHQService.CreateAsync(item);
             item.ServiceAnhThqid = id;
 
             var itemJson = JsonConvert.SerializeObject(item);
-            await Clients.All.SendAsync("Receiver_CreateServicesAnhTHQ", itemJson);
-        }
 
+            // Gửi tới tất cả clients (hiển thị item mới)
+            await Clients.All.SendAsync("Receiver_CreateServicesAnhTHQ", itemJson);
+
+            // Gửi riêng cho người tạo (hiển thị thông báo)
+            await Clients.Caller.SendAsync("HubCreateSuccess", item.ServiceName);
+        }
 
         public async Task HubUpdate_ServicesAnhTHQ(string JsonServicesString)
         {

@@ -13,16 +13,17 @@ public class Program
         builder.Services.AddDbContext<SU25_PRN222_SE1706_G6_DNATestServiceManagerContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-
         // Add services to the container.
         builder.Services.AddRazorPages();
         builder.Services.AddSignalR(); 
         builder.Services.AddScoped<IServicesAnhTHQService, ServicesAnhTHQService>();
+        builder.Services.AddScoped<IServicePriceListAnhTHQService, ServicePriceListAnhTHQService>();
         builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
         .AddCookie(options =>
         {
+            options.LoginPath = "/Account/Login"; 
             options.AccessDeniedPath = "/Account/Forbidden";
-            options.ExpireTimeSpan = TimeSpan.FromMinutes(5);
+            options.ExpireTimeSpan = TimeSpan.FromMinutes(30); 
         });
 
         var app = builder.Build();

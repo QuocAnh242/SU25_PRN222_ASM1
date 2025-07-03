@@ -1,28 +1,39 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using DNATestServiceManager.Repositories.AnhTHQ.Models;
+using DNATestServiceManager.Services.AnhTHQ;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using DNATestServiceManager.Repositories.AnhTHQ.DBContext;
-using DNATestServiceManager.Repositories.AnhTHQ.Models;
+using System;
+using System.Threading.Tasks;
 
 namespace DNATestServiceManager.RazorWebApp.AnhTHQ.Pages.ServicesAnhThq
 {
+    [Authorize(Roles = "1")]
     public class CreateModel : PageModel
     {
-        private readonly DNATestServiceManager.Repositories.AnhTHQ.DBContext.SU25_PRN222_SE1706_G6_DNATestServiceManagerContext _context;
+        private readonly IServicesAnhTHQService _servicesAnhTHQService;
 
-        public CreateModel(DNATestServiceManager.Repositories.AnhTHQ.DBContext.SU25_PRN222_SE1706_G6_DNATestServiceManagerContext context)
+        public CreateModel(IServicesAnhTHQService servicesAnhTHQService)
         {
-            _context = context;
+            _servicesAnhTHQService = servicesAnhTHQService;
         }
 
         [BindProperty]
         public ServiceAnhThq ServicesAnhThq { get; set; } = default!;
 
-        // For more information, see https://aka.ms/RazorPagesCRUD.
+        public void OnGet()
+        {
+            var userName = User.Identity?.Name ?? "Unknown";
+
+            ServicesAnhThq = new ServiceAnhThq
+            {
+                CreatedBy = userName,
+                ModifiedBy = userName,
+                CreatedDate = DateTime.Now,
+                ModifiedDate = DateTime.Now
+            };
+        }
+
         public async Task<IActionResult> OnPostAsync()
         {
             if (!ModelState.IsValid)
@@ -30,8 +41,13 @@ namespace DNATestServiceManager.RazorWebApp.AnhTHQ.Pages.ServicesAnhThq
                 return Page();
             }
 
-            _context.ServicesAnhThqs.Add(ServicesAnhThq);
-            await _context.SaveChangesAsync();
+            var userName = User.Identity?.Name ?? "Unknown";
+            ServicesAnhThq.CreatedBy = userName;
+            ServicesAnhThq.ModifiedBy = userName;
+            ServicesAnhThq.CreatedDate = DateTime.Now;
+            ServicesAnhThq.ModifiedDate = DateTime.Now;
+
+            await _servicesAnhTHQService.CreateAsync(ServicesAnhThq);
 
             return RedirectToPage("./Index");
         }

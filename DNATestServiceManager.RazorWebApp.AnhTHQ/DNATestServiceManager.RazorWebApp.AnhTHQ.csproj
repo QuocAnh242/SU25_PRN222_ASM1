@@ -1,9 +1,18 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+
+    <!-- Vô hiệu hóa nén để tránh lỗi Duplicate -->
+    <EnableCompressionInPublish>false</EnableCompressionInPublish>
+    <EnableCompressionInStaticWebAssets>false</EnableCompressionInStaticWebAssets>
+    <DisableDiscoverStaticAssetsCompression>true</DisableDiscoverStaticAssetsCompression>
+    <IgnoreDuplicateTargetPaths>true</IgnoreDuplicateTargetPaths>
+
+    <!-- XÓA dòng này vì gây lỗi thiếu Main -->
+    <!-- <EnableDefaultItems>false</EnableDefaultItems> -->
   </PropertyGroup>
 
   <ItemGroup>

@@ -1,20 +1,21 @@
-﻿using System.Linq;
-using System.Threading.Tasks;
+﻿using DNATestServiceManager.Repositories.AnhTHQ.Models;
+using DNATestServiceManager.Services.AnhTHQ;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.EntityFrameworkCore;
-using DNATestServiceManager.Repositories.AnhTHQ.DBContext;
-using DNATestServiceManager.Repositories.AnhTHQ.Models;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace DNATestServiceManager.RazorWebApp.AnhTHQ.Pages.ServicesAnhThq
 {
+    [Authorize(Roles = "1,2")]
     public class EditModel : PageModel
     {
-        private readonly SU25_PRN222_SE1706_G6_DNATestServiceManagerContext _context;
+        private readonly IServicesAnhTHQService _servicesAnhTHQService;
 
-        public EditModel(SU25_PRN222_SE1706_G6_DNATestServiceManagerContext context)
+        public EditModel(IServicesAnhTHQService servicesAnhTHQService)
         {
-            _context = context;
+            _servicesAnhTHQService = servicesAnhTHQService;
         }
 
         [BindProperty]
@@ -25,11 +26,12 @@ namespace DNATestServiceManager.RazorWebApp.AnhTHQ.Pages.ServicesAnhThq
             if (id == null)
                 return NotFound();
 
-            ServicesAnhThq = await _context.ServicesAnhThqs.FirstOrDefaultAsync(m => m.ServiceAnhThqid == id);
+            var service = await _servicesAnhTHQService.GetByIdAsync(id.Value);
 
-            if (ServicesAnhThq == null)
+            if (service == null || service.ServiceAnhThqid == 0)
                 return NotFound();
 
+            ServicesAnhThq = service;
             return Page();
         }
 
@@ -38,26 +40,12 @@ namespace DNATestServiceManager.RazorWebApp.AnhTHQ.Pages.ServicesAnhThq
             if (!ModelState.IsValid)
                 return Page();
 
-            _context.Attach(ServicesAnhThq).State = EntityState.Modified;
+            var result = await _servicesAnhTHQService.UpdateAsync(ServicesAnhThq);
 
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!ServicesAnhThqExists(ServicesAnhThq.ServiceAnhThqid))
-                    return NotFound();
-                else
-                    throw;
-            }
+            if (result == 0)
+                return NotFound();
 
             return RedirectToPage("./Index");
-        }
-
-        private bool ServicesAnhThqExists(int id)
-        {
-            return _context.ServicesAnhThqs.Any(e => e.ServiceAnhThqid == id);
         }
     }
 }

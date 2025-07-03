@@ -1,18 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using DNATestServiceManager.Repositories.AnhTHQ.DBContext;
+using DNATestServiceManager.Repositories.AnhTHQ.Models;
+using DNATestServiceManager.Services.AnhTHQ;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
-using DNATestServiceManager.Repositories.AnhTHQ.DBContext;
-using DNATestServiceManager.Repositories.AnhTHQ.Models;
-using DNATestServiceManager.Services.AnhTHQ;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace DNATestServiceManager.RazorWebApp.AnhTHQ.Pages.ServicesAnhThq
 {
+    [Authorize(Roles = "1,2,3")]
     public class DetailsModel : PageModel
     {
+
         private readonly IServicesAnhTHQService _servicesAnhTHQService;
 
         public DetailsModel(IServicesAnhTHQService servicesAnhTHQService)

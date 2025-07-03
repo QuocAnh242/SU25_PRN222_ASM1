@@ -1,26 +1,14 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Admin\\OneDrive\\Desktop\\PRN222\\SU25_PRN222_ASM1\\",
+  "WorkspaceRootPath": "C:\\Users\\Admin\\OneDrive\\Desktop\\PRN222\\SU25_PRN222_SE1706_ASM1_SE182634_AnhTHQ\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CDEA944B-7FE4-49A4-B753-21D3E4D4196E}|DNATestServiceManager.RazorWebApp.AnhTHQ\\DNATestServiceManager.RazorWebApp.AnhTHQ.csproj|c:\\users\\admin\\onedrive\\desktop\\prn222\\su25_prn222_asm1\\dnatestservicemanager.razorwebapp.anhthq\\pages\\servicesanhthq\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{CDEA944B-7FE4-49A4-B753-21D3E4D4196E}|DNATestServiceManager.RazorWebApp.AnhTHQ\\DNATestServiceManager.RazorWebApp.AnhTHQ.csproj|solutionrelative:dnatestservicemanager.razorwebapp.anhthq\\pages\\servicesanhthq\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CDEA944B-7FE4-49A4-B753-21D3E4D4196E}|DNATestServiceManager.RazorWebApp.AnhTHQ\\DNATestServiceManager.RazorWebApp.AnhTHQ.csproj|c:\\users\\admin\\onedrive\\desktop\\prn222\\su25_prn222_asm1\\dnatestservicemanager.razorwebapp.anhthq\\hubs\\dnatestservicemanagerhub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CDEA944B-7FE4-49A4-B753-21D3E4D4196E}|DNATestServiceManager.RazorWebApp.AnhTHQ\\DNATestServiceManager.RazorWebApp.AnhTHQ.csproj|solutionrelative:dnatestservicemanager.razorwebapp.anhthq\\hubs\\dnatestservicemanagerhub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CA683811-CC59-47E9-BC21-14B25C956F49}|DNATestServiceManager.Repositories.AnhTHQ\\DNATestServiceManager.Repositories.AnhTHQ.csproj|c:\\users\\admin\\onedrive\\desktop\\prn222\\su25_prn222_asm1\\dnatestservicemanager.repositories.anhthq\\servicesanhthqrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CA683811-CC59-47E9-BC21-14B25C956F49}|DNATestServiceManager.Repositories.AnhTHQ\\DNATestServiceManager.Repositories.AnhTHQ.csproj|solutionrelative:dnatestservicemanager.repositories.anhthq\\servicesanhthqrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CDEA944B-7FE4-49A4-B753-21D3E4D4196E}|DNATestServiceManager.RazorWebApp.AnhTHQ\\DNATestServiceManager.RazorWebApp.AnhTHQ.csproj|c:\\users\\admin\\onedrive\\desktop\\prn222\\su25_prn222_asm1\\dnatestservicemanager.razorwebapp.anhthq\\pages\\servicesanhthq\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{CDEA944B-7FE4-49A4-B753-21D3E4D4196E}|DNATestServiceManager.RazorWebApp.AnhTHQ\\DNATestServiceManager.RazorWebApp.AnhTHQ.csproj|solutionrelative:dnatestservicemanager.razorwebapp.anhthq\\pages\\servicesanhthq\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ECEACF64-2ED1-4D4A-895D-58EC474CC75E}|DNATestServiceManager.Services.AnhTHQ\\DNATestServiceManager.Services.AnhTHQ.csproj|c:\\users\\admin\\onedrive\\desktop\\prn222\\su25_prn222_asm1\\dnatestservicemanager.services.anhthq\\servicesanhthqservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{ECEACF64-2ED1-4D4A-895D-58EC474CC75E}|DNATestServiceManager.Services.AnhTHQ\\DNATestServiceManager.Services.AnhTHQ.csproj|c:\\users\\admin\\onedrive\\desktop\\prn222\\su25_prn222_se1706_asm1_se182634_anhthq\\dnatestservicemanager.services.anhthq\\servicesanhthqservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{ECEACF64-2ED1-4D4A-895D-58EC474CC75E}|DNATestServiceManager.Services.AnhTHQ\\DNATestServiceManager.Services.AnhTHQ.csproj|solutionrelative:dnatestservicemanager.services.anhthq\\servicesanhthqservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ECEACF64-2ED1-4D4A-895D-58EC474CC75E}|DNATestServiceManager.Services.AnhTHQ\\DNATestServiceManager.Services.AnhTHQ.csproj|c:\\users\\admin\\onedrive\\desktop\\prn222\\su25_prn222_se1706_asm1_se182634_anhthq\\dnatestservicemanager.services.anhthq\\servicepricelistanhthqservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ECEACF64-2ED1-4D4A-895D-58EC474CC75E}|DNATestServiceManager.Services.AnhTHQ\\DNATestServiceManager.Services.AnhTHQ.csproj|solutionrelative:dnatestservicemanager.services.anhthq\\servicepricelistanhthqservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -29,61 +17,45 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "DockedWidth": 169,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Admin\\OneDrive\\Desktop\\PRN222\\SU25_PRN222_ASM1\\DNATestServiceManager.RazorWebApp.AnhTHQ\\Pages\\ServicesAnhThq\\Index.cshtml",
-              "RelativeDocumentMoniker": "DNATestServiceManager.RazorWebApp.AnhTHQ\\Pages\\ServicesAnhThq\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Admin\\OneDrive\\Desktop\\PRN222\\SU25_PRN222_ASM1\\DNATestServiceManager.RazorWebApp.AnhTHQ\\Pages\\ServicesAnhThq\\Index.cshtml",
-              "RelativeToolTip": "DNATestServiceManager.RazorWebApp.AnhTHQ\\Pages\\ServicesAnhThq\\Index.cshtml",
-              "ViewState": "AgIAAHUAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-16T16:17:25.949Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ServicesAnhTHQRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\OneDrive\\Desktop\\PRN222\\SU25_PRN222_ASM1\\DNATestServiceManager.Repositories.AnhTHQ\\ServicesAnhTHQRepository.cs",
-              "RelativeDocumentMoniker": "DNATestServiceManager.Repositories.AnhTHQ\\ServicesAnhTHQRepository.cs",
-              "ToolTip": "C:\\Users\\Admin\\OneDrive\\Desktop\\PRN222\\SU25_PRN222_ASM1\\DNATestServiceManager.Repositories.AnhTHQ\\ServicesAnhTHQRepository.cs",
-              "RelativeToolTip": "DNATestServiceManager.Repositories.AnhTHQ\\ServicesAnhTHQRepository.cs",
-              "ViewState": "AgIAADAAAAAAAAAAAAAQwDsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-16T16:08:51.943Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
               "Title": "ServicesAnhTHQService.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\OneDrive\\Desktop\\PRN222\\SU25_PRN222_ASM1\\DNATestServiceManager.Services.AnhTHQ\\ServicesAnhTHQService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\OneDrive\\Desktop\\PRN222\\SU25_PRN222_SE1706_ASM1_SE182634_AnhTHQ\\DNATestServiceManager.Services.AnhTHQ\\ServicesAnhTHQService.cs",
               "RelativeDocumentMoniker": "DNATestServiceManager.Services.AnhTHQ\\ServicesAnhTHQService.cs",
-              "ToolTip": "C:\\Users\\Admin\\OneDrive\\Desktop\\PRN222\\SU25_PRN222_ASM1\\DNATestServiceManager.Services.AnhTHQ\\ServicesAnhTHQService.cs",
+              "ToolTip": "C:\\Users\\Admin\\OneDrive\\Desktop\\PRN222\\SU25_PRN222_SE1706_ASM1_SE182634_AnhTHQ\\DNATestServiceManager.Services.AnhTHQ\\ServicesAnhTHQService.cs",
               "RelativeToolTip": "DNATestServiceManager.Services.AnhTHQ\\ServicesAnhTHQService.cs",
-              "ViewState": "AgIAABoAAAAAAAAAAAAAACMAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAUwB0AAABVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-16T16:08:44.675Z",
+              "WhenOpened": "2025-07-03T08:16:11.476Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "DNATestServiceManagerHub.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\OneDrive\\Desktop\\PRN222\\SU25_PRN222_ASM1\\DNATestServiceManager.RazorWebApp.AnhTHQ\\Hubs\\DNATestServiceManagerHub.cs",
-              "RelativeDocumentMoniker": "DNATestServiceManager.RazorWebApp.AnhTHQ\\Hubs\\DNATestServiceManagerHub.cs",
-              "ToolTip": "C:\\Users\\Admin\\OneDrive\\Desktop\\PRN222\\SU25_PRN222_ASM1\\DNATestServiceManager.RazorWebApp.AnhTHQ\\Hubs\\DNATestServiceManagerHub.cs",
-              "RelativeToolTip": "DNATestServiceManager.RazorWebApp.AnhTHQ\\Hubs\\DNATestServiceManagerHub.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAAAACYAAAAIAAAAAAAAAA==",
+              "Title": "ServicePriceListAnhTHQService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\OneDrive\\Desktop\\PRN222\\SU25_PRN222_SE1706_ASM1_SE182634_AnhTHQ\\DNATestServiceManager.Services.AnhTHQ\\ServicePriceListAnhTHQService.cs",
+              "RelativeDocumentMoniker": "DNATestServiceManager.Services.AnhTHQ\\ServicePriceListAnhTHQService.cs",
+              "ToolTip": "C:\\Users\\Admin\\OneDrive\\Desktop\\PRN222\\SU25_PRN222_SE1706_ASM1_SE182634_AnhTHQ\\DNATestServiceManager.Services.AnhTHQ\\ServicePriceListAnhTHQService.cs",
+              "RelativeToolTip": "DNATestServiceManager.Services.AnhTHQ\\ServicePriceListAnhTHQService.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-16T16:06:52.851Z",
+              "WhenOpened": "2025-07-03T08:16:01.912Z",
               "EditorCaption": ""
-            },
+            }
+          ]
+        },
+        {
+          "DockedWidth": 231,
+          "SelectedChildIndex": -1,
+          "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
@@ -134,20 +106,11 @@
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:5:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+              "Name": "ST:6:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Edit.cshtml",
-              "DocumentMoniker": "C:\\Users\\Admin\\OneDrive\\Desktop\\PRN222\\SU25_PRN222_ASM1\\DNATestServiceManager.RazorWebApp.AnhTHQ\\Pages\\ServicesAnhThq\\Edit.cshtml",
-              "RelativeDocumentMoniker": "DNATestServiceManager.RazorWebApp.AnhTHQ\\Pages\\ServicesAnhThq\\Edit.cshtml",
-              "ToolTip": "C:\\Users\\Admin\\OneDrive\\Desktop\\PRN222\\SU25_PRN222_ASM1\\DNATestServiceManager.RazorWebApp.AnhTHQ\\Pages\\ServicesAnhThq\\Edit.cshtml",
-              "RelativeToolTip": "DNATestServiceManager.RazorWebApp.AnhTHQ\\Pages\\ServicesAnhThq\\Edit.cshtml",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAQwBAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-16T16:00:26.127Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:7:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
             }
           ]
         },

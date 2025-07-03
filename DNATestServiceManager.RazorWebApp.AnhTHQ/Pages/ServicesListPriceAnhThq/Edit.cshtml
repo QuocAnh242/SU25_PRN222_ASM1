@@ -1,0 +1,60 @@
+﻿@page
+@model DNATestServiceManager.RazorWebApp.AnhTHQ.Pages.ServicesListPriceAnhThq.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>ServicePriceListAnhThq</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ServicePriceListAnhThq.ServicePriceListAnhThqid" />
+            <div class="form-group">
+                <label asp-for="ServicePriceListAnhThq.ServiceAnhThqid" class="control-label"></label>
+                <select asp-for="ServicePriceListAnhThq.ServiceAnhThqid" class="form-control" asp-items="ViewBag.ServiceAnhThqid"></select>
+                <span asp-validation-for="ServicePriceListAnhThq.ServiceAnhThqid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServicePriceListAnhThq.BasePrice" class="control-label"></label>
+                <input asp-for="ServicePriceListAnhThq.BasePrice" class="form-control" />
+                <span asp-validation-for="ServicePriceListAnhThq.BasePrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServicePriceListAnhThq.AdditionalFee" class="control-label"></label>
+                <input asp-for="ServicePriceListAnhThq.AdditionalFee" class="form-control" />
+                <span asp-validation-for="ServicePriceListAnhThq.AdditionalFee" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServicePriceListAnhThq.EffectiveDate" class="control-label"></label>
+                <input asp-for="ServicePriceListAnhThq.EffectiveDate" class="form-control" />
+                <span asp-validation-for="ServicePriceListAnhThq.EffectiveDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServicePriceListAnhThq.ExpiryDate" class="control-label"></label>
+                <input asp-for="ServicePriceListAnhThq.ExpiryDate" class="form-control" />
+                <span asp-validation-for="ServicePriceListAnhThq.ExpiryDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServicePriceListAnhThq.IsAvailable" class="control-label"></label>
+                <input asp-for="ServicePriceListAnhThq.IsAvailable" class="form-control" />
+                <span asp-validation-for="ServicePriceListAnhThq.IsAvailable" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

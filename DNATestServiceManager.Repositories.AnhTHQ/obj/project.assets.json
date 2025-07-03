@@ -4416,11 +4416,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Admin\\OneDrive\\Desktop\\PRN222\\SU25_PRN222_ASM1\\DNATestServiceManager.Repositories.AnhTHQ\\DNATestServiceManager.Repositories.AnhTHQ.csproj",
+      "projectUniqueName": "C:\\Users\\Admin\\OneDrive\\Desktop\\PRN222\\SU25_PRN222_SE1706_ASM1_SE182634_AnhTHQ\\DNATestServiceManager.Repositories.AnhTHQ\\DNATestServiceManager.Repositories.AnhTHQ.csproj",
       "projectName": "DNATestServiceManager.Repositories.AnhTHQ",
-      "projectPath": "C:\\Users\\Admin\\OneDrive\\Desktop\\PRN222\\SU25_PRN222_ASM1\\DNATestServiceManager.Repositories.AnhTHQ\\DNATestServiceManager.Repositories.AnhTHQ.csproj",
+      "projectPath": "C:\\Users\\Admin\\OneDrive\\Desktop\\PRN222\\SU25_PRN222_SE1706_ASM1_SE182634_AnhTHQ\\DNATestServiceManager.Repositories.AnhTHQ\\DNATestServiceManager.Repositories.AnhTHQ.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Admin\\OneDrive\\Desktop\\PRN222\\SU25_PRN222_ASM1\\DNATestServiceManager.Repositories.AnhTHQ\\obj\\",
+      "outputPath": "C:\\Users\\Admin\\OneDrive\\Desktop\\PRN222\\SU25_PRN222_SE1706_ASM1_SE182634_AnhTHQ\\DNATestServiceManager.Repositories.AnhTHQ\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -2,87 +2,58 @@
 @model DNATestServiceManager.RazorWebApp.AnhTHQ.Pages.ServicesAnhThq.IndexModel
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Service Management";
 }
 
-<h1>Index</h1>
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2 class="text-primary">Danh sách dịch vụ xét nghiệm</h2>
+        <a asp-page="Create" class="btn btn-success shadow-sm">+ Thêm dịch vụ</a>
+    </div>
 
-<p>
-    <a asp-page="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.ServicesAnhThq[0].ServiceName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ServicesAnhThq[0].ServiceType)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ServicesAnhThq[0].Description)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ServicesAnhThq[0].Category)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ServicesAnhThq[0].CreatedDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ServicesAnhThq[0].CreatedBy)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ServicesAnhThq[0].ModifiedDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ServicesAnhThq[0].ModifiedBy)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ServicesAnhThq[0].IsActive)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody id="servicesAnhTHQTBodyId">
-        @foreach (var item in Model.ServicesAnhThq)
-        {
-            <tr id="@item.ServiceAnhThqid">
-                <td>
-                    @Html.DisplayFor(modelItem => item.ServiceName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ServiceType)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Description)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Category)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CreatedDate)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CreatedBy)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ModifiedDate)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ModifiedBy)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.IsActive)
-                </td>
-                <td>
-                    <a asp-page="./Edit" asp-route-id="@item.ServiceAnhThqid">Edit</a> |
-                    <a asp-page="./Details" asp-route-id="@item.ServiceAnhThqid">Details</a> |
-                    <a asp-page="./Delete" asp-route-id="@item.ServiceAnhThqid">Delete</a>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
+    <div class="table-responsive shadow-sm border rounded">
+        <table class="table table-hover table-bordered mb-0">
+            <thead class="table-light text-center">
+                <tr>
+                    <th>@Html.DisplayNameFor(m => m.ServicesAnhThq[0].ServiceName)</th>
+                    <th>@Html.DisplayNameFor(m => m.ServicesAnhThq[0].ServiceType)</th>
+                    <th>@Html.DisplayNameFor(m => m.ServicesAnhThq[0].Description)</th>
+                    <th>@Html.DisplayNameFor(m => m.ServicesAnhThq[0].Category)</th>
+                    <th>@Html.DisplayNameFor(m => m.ServicesAnhThq[0].CreatedDate)</th>
+                    <th>@Html.DisplayNameFor(m => m.ServicesAnhThq[0].CreatedBy)</th>
+                    <th>@Html.DisplayNameFor(m => m.ServicesAnhThq[0].ModifiedDate)</th>
+                    <th>@Html.DisplayNameFor(m => m.ServicesAnhThq[0].ModifiedBy)</th>
+                    <th>@Html.DisplayNameFor(m => m.ServicesAnhThq[0].IsActive)</th>
+                    <th>Hành động</th>
+                </tr>
+            </thead>
+            <tbody id="servicesAnhTHQTBodyId" class="text-center align-middle">
+                @foreach (var item in Model.ServicesAnhThq)
+                {
+                    <tr id="@item.ServiceAnhThqid">
+                        <td>@Html.DisplayFor(m => item.ServiceName)</td>
+                        <td>@Html.DisplayFor(m => item.ServiceType)</td>
+                        <td>@Html.DisplayFor(m => item.Description)</td>
+                        <td>@Html.DisplayFor(m => item.Category)</td>
+                        <td>@Html.DisplayFor(m => item.CreatedDate)</td>
+                        <td>@Html.DisplayFor(m => item.CreatedBy)</td>
+                        <td>@Html.DisplayFor(m => item.ModifiedDate)</td>
+                        <td>@Html.DisplayFor(m => item.ModifiedBy)</td>
+                        <td>@((item.IsActive ?? false) ? "Hoạt động" : "Không")</td> 
+                        <td>
+                            <a asp-page="Edit" asp-route-id="@item.ServiceAnhThqid" class="btn btn-sm btn-outline-primary">Sửa</a>
+                            <a asp-page="Details" asp-route-id="@item.ServiceAnhThqid" class="btn btn-sm btn-outline-info mx-1">Chi tiết</a>
+                            <a asp-page="Delete" asp-route-id="@item.ServiceAnhThqid" class="btn btn-sm btn-outline-danger">Xóa</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/paginathing.js"></script>
 <script src="~/js/signalr/dist/browser/signalr.js"></script>
 <script src="~/lib/microsoft/signalr/dist/browser/signalr.js"></script>
 <script>
@@ -115,7 +86,7 @@
                 <td>${item.CreatedBy || ''}</td>
                 <td>${item.ModifiedDate ? new Date(item.ModifiedDate).toLocaleDateString() : ''}</td>
                 <td>${item.ModifiedBy || ''}</td>
-                <td>${item.IsActive}</td>
+                <td>${item.IsActive ? 'true' : 'false'}</td>
                 <td>
                     <a href="/ServicesAnhThq/Edit?id=${item.ServiceAnhThqid}">Edit</a> |
                     <a href="/ServicesAnhThq/Details?id=${item.ServiceAnhThqid}">Details</a> |
@@ -159,5 +130,10 @@
     });
 
 
-
+    $('.table tbody').paginathing({
+        perPage: 6,
+        insertAfter: '.table',
+        pageNumbers: true,
+        ulClass: 'pagination flex-wrap justify-content-center'
+    });
 </script>

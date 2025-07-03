@@ -17,73 +17,93 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = DNATestServiceManager.RazorWebApp.AnhTHQ
 build_property.RootNamespace = DNATestServiceManager.RazorWebApp.AnhTHQ
-build_property.ProjectDir = C:\Users\Admin\OneDrive\Desktop\PRN222\SU25_PRN222_ASM1\DNATestServiceManager.RazorWebApp.AnhTHQ\
+build_property.ProjectDir = C:\Users\Admin\OneDrive\Desktop\PRN222\SU25_PRN222_SE1706_ASM1_SE182634_AnhTHQ\DNATestServiceManager.RazorWebApp.AnhTHQ\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Admin\OneDrive\Desktop\PRN222\SU25_PRN222_ASM1\DNATestServiceManager.RazorWebApp.AnhTHQ
+build_property.MSBuildProjectDirectory = C:\Users\Admin\OneDrive\Desktop\PRN222\SU25_PRN222_SE1706_ASM1_SE182634_AnhTHQ\DNATestServiceManager.RazorWebApp.AnhTHQ
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 8.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/Admin/OneDrive/Desktop/PRN222/SU25_PRN222_ASM1/DNATestServiceManager.RazorWebApp.AnhTHQ/Pages/Account/Forbidden.cshtml]
+[C:/Users/Admin/OneDrive/Desktop/PRN222/SU25_PRN222_SE1706_ASM1_SE182634_AnhTHQ/DNATestServiceManager.RazorWebApp.AnhTHQ/Pages/Account/Forbidden.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxGb3JiaWRkZW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/OneDrive/Desktop/PRN222/SU25_PRN222_ASM1/DNATestServiceManager.RazorWebApp.AnhTHQ/Pages/Account/Login.cshtml]
+[C:/Users/Admin/OneDrive/Desktop/PRN222/SU25_PRN222_SE1706_ASM1_SE182634_AnhTHQ/DNATestServiceManager.RazorWebApp.AnhTHQ/Pages/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/OneDrive/Desktop/PRN222/SU25_PRN222_ASM1/DNATestServiceManager.RazorWebApp.AnhTHQ/Pages/Account/Logout.cshtml]
+[C:/Users/Admin/OneDrive/Desktop/PRN222/SU25_PRN222_SE1706_ASM1_SE182634_AnhTHQ/DNATestServiceManager.RazorWebApp.AnhTHQ/Pages/Account/Logout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxMb2dvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/OneDrive/Desktop/PRN222/SU25_PRN222_ASM1/DNATestServiceManager.RazorWebApp.AnhTHQ/Pages/Error.cshtml]
+[C:/Users/Admin/OneDrive/Desktop/PRN222/SU25_PRN222_SE1706_ASM1_SE182634_AnhTHQ/DNATestServiceManager.RazorWebApp.AnhTHQ/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/OneDrive/Desktop/PRN222/SU25_PRN222_ASM1/DNATestServiceManager.RazorWebApp.AnhTHQ/Pages/Index.cshtml]
+[C:/Users/Admin/OneDrive/Desktop/PRN222/SU25_PRN222_SE1706_ASM1_SE182634_AnhTHQ/DNATestServiceManager.RazorWebApp.AnhTHQ/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/OneDrive/Desktop/PRN222/SU25_PRN222_ASM1/DNATestServiceManager.RazorWebApp.AnhTHQ/Pages/Privacy.cshtml]
+[C:/Users/Admin/OneDrive/Desktop/PRN222/SU25_PRN222_SE1706_ASM1_SE182634_AnhTHQ/DNATestServiceManager.RazorWebApp.AnhTHQ/Pages/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/OneDrive/Desktop/PRN222/SU25_PRN222_ASM1/DNATestServiceManager.RazorWebApp.AnhTHQ/Pages/ServicesAnhThq/Create.cshtml]
+[C:/Users/Admin/OneDrive/Desktop/PRN222/SU25_PRN222_SE1706_ASM1_SE182634_AnhTHQ/DNATestServiceManager.RazorWebApp.AnhTHQ/Pages/ServicesAnhThq/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2VydmljZXNBbmhUaHFcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/OneDrive/Desktop/PRN222/SU25_PRN222_ASM1/DNATestServiceManager.RazorWebApp.AnhTHQ/Pages/ServicesAnhThq/Delete.cshtml]
+[C:/Users/Admin/OneDrive/Desktop/PRN222/SU25_PRN222_SE1706_ASM1_SE182634_AnhTHQ/DNATestServiceManager.RazorWebApp.AnhTHQ/Pages/ServicesAnhThq/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2VydmljZXNBbmhUaHFcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/OneDrive/Desktop/PRN222/SU25_PRN222_ASM1/DNATestServiceManager.RazorWebApp.AnhTHQ/Pages/ServicesAnhThq/Details.cshtml]
+[C:/Users/Admin/OneDrive/Desktop/PRN222/SU25_PRN222_SE1706_ASM1_SE182634_AnhTHQ/DNATestServiceManager.RazorWebApp.AnhTHQ/Pages/ServicesAnhThq/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2VydmljZXNBbmhUaHFcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/OneDrive/Desktop/PRN222/SU25_PRN222_ASM1/DNATestServiceManager.RazorWebApp.AnhTHQ/Pages/ServicesAnhThq/Edit.cshtml]
+[C:/Users/Admin/OneDrive/Desktop/PRN222/SU25_PRN222_SE1706_ASM1_SE182634_AnhTHQ/DNATestServiceManager.RazorWebApp.AnhTHQ/Pages/ServicesAnhThq/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2VydmljZXNBbmhUaHFcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/OneDrive/Desktop/PRN222/SU25_PRN222_ASM1/DNATestServiceManager.RazorWebApp.AnhTHQ/Pages/ServicesAnhThq/Index.cshtml]
+[C:/Users/Admin/OneDrive/Desktop/PRN222/SU25_PRN222_SE1706_ASM1_SE182634_AnhTHQ/DNATestServiceManager.RazorWebApp.AnhTHQ/Pages/ServicesAnhThq/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2VydmljZXNBbmhUaHFcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/OneDrive/Desktop/PRN222/SU25_PRN222_ASM1/DNATestServiceManager.RazorWebApp.AnhTHQ/Pages/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/Admin/OneDrive/Desktop/PRN222/SU25_PRN222_SE1706_ASM1_SE182634_AnhTHQ/DNATestServiceManager.RazorWebApp.AnhTHQ/Pages/ServicesListPriceAnhThq/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2VydmljZXNMaXN0UHJpY2VBbmhUaHFcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/OneDrive/Desktop/PRN222/SU25_PRN222_SE1706_ASM1_SE182634_AnhTHQ/DNATestServiceManager.RazorWebApp.AnhTHQ/Pages/ServicesListPriceAnhThq/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2VydmljZXNMaXN0UHJpY2VBbmhUaHFcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/OneDrive/Desktop/PRN222/SU25_PRN222_SE1706_ASM1_SE182634_AnhTHQ/DNATestServiceManager.RazorWebApp.AnhTHQ/Pages/ServicesListPriceAnhThq/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2VydmljZXNMaXN0UHJpY2VBbmhUaHFcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/OneDrive/Desktop/PRN222/SU25_PRN222_SE1706_ASM1_SE182634_AnhTHQ/DNATestServiceManager.RazorWebApp.AnhTHQ/Pages/ServicesListPriceAnhThq/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2VydmljZXNMaXN0UHJpY2VBbmhUaHFcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/OneDrive/Desktop/PRN222/SU25_PRN222_SE1706_ASM1_SE182634_AnhTHQ/DNATestServiceManager.RazorWebApp.AnhTHQ/Pages/ServicesListPriceAnhThq/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2VydmljZXNMaXN0UHJpY2VBbmhUaHFcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/OneDrive/Desktop/PRN222/SU25_PRN222_SE1706_ASM1_SE182634_AnhTHQ/DNATestServiceManager.RazorWebApp.AnhTHQ/Pages/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/OneDrive/Desktop/PRN222/SU25_PRN222_ASM1/DNATestServiceManager.RazorWebApp.AnhTHQ/Pages/_ViewImports.cshtml]
+[C:/Users/Admin/OneDrive/Desktop/PRN222/SU25_PRN222_SE1706_ASM1_SE182634_AnhTHQ/DNATestServiceManager.RazorWebApp.AnhTHQ/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/OneDrive/Desktop/PRN222/SU25_PRN222_ASM1/DNATestServiceManager.RazorWebApp.AnhTHQ/Pages/_ViewStart.cshtml]
+[C:/Users/Admin/OneDrive/Desktop/PRN222/SU25_PRN222_SE1706_ASM1_SE182634_AnhTHQ/DNATestServiceManager.RazorWebApp.AnhTHQ/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/OneDrive/Desktop/PRN222/SU25_PRN222_ASM1/DNATestServiceManager.RazorWebApp.AnhTHQ/Pages/Shared/_Layout.cshtml]
+[C:/Users/Admin/OneDrive/Desktop/PRN222/SU25_PRN222_SE1706_ASM1_SE182634_AnhTHQ/DNATestServiceManager.RazorWebApp.AnhTHQ/Pages/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-es3ubzdd78

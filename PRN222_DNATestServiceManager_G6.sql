@@ -1,4 +1,5 @@
--- DATABASE NAME
+-- DATABASE NAME\
+DROP DATABASE SU25_PRN222_SE1706_G6_DNATestServiceManager
 CREATE DATABASE SU25_PRN222_SE1706_G6_DNATestServiceManager
 
 USE SU25_PRN222_SE1706_G6_DNATestServiceManager
@@ -223,3 +224,48 @@ VALUES
     ('Immigration DNA', 'Confirmed', 1550.00, 2, '2025-05-17 15:00:00', '2025-05-26 14:00:00', 0, '', 2, 2),
     ('Ancestry', 'Completed', 480.00, 1, '2025-05-10 10:30:00', '2025-05-19 09:30:00', 1, 'Repeat customer', 3, 3),
     ('DNA Test', 'Cancelled', 1100.00, 2, '2025-05-14 08:30:00', '2025-05-21 09:00:00', 0, 'Cancelled by user', 1, 1);
+
+
+	INSERT INTO UserAccount 
+(UserName, Password, FullName, Email, Phone, EmployeeCode, RoleId, RequestCode, CreatedDate, ApplicationCode, CreatedBy, ModifiedDate, ModifiedBy, IsActive) 
+VALUES 
+('acc', '@a', 'Accountant', 'Accountant@', '0913652742', '000001', 2, 'REQ001', GETDATE(), 'APP001', 'System', GETDATE(), 'System', 1),
+('auditor', '@a', 'Internal Auditor', 'InternalAuditor@', '0972224568', '000002', 3, 'REQ002', GETDATE(), 'APP002', 'System', GETDATE(), 'System', 1),
+('chiefacc', '@a', 'Chief Accountant', 'ChiefAccountant@', '0902927373', '000003', 1, 'REQ003', GETDATE(), 'APP003', 'System', GETDATE(), 'System', 1);
+
+
+INSERT INTO ServicesAnhTHQ 
+(ServiceName, ServiceType, Description, Category, CreatedDate, CreatedBy, ModifiedDate, ModifiedBy, IsActive) 
+VALUES
+(N'DNA Paternity Test', N'Genetic', N'Used to determine biological relationship between a father and child.', N'Family', GETDATE(), 'admin', GETDATE(), 'admin', 1),
+(N'DNA Ancestry Analysis', N'Genetic', N'Provides information about ethnic background and ancestry.', N'Heritage', GETDATE(), 'admin', GETDATE(), 'admin', 1),
+(N'Forensic DNA Profiling', N'Legal', N'Used in criminal investigations to match DNA evidence.', N'Legal', GETDATE(), 'admin', GETDATE(), 'admin', 1),
+(N'Prenatal DNA Test', N'Medical', N'Used to determine paternity before birth.', N'Medical', GETDATE(), 'admin', GETDATE(), 'admin', 1),
+(N'Sibling DNA Test', N'Genetic', N'Used to verify biological sibling relationships.', N'Family', GETDATE(), 'admin', GETDATE(), 'admin', 1);
+
+	
+INSERT INTO BookingMinhNDA
+(BookingType, Status, TotalPrice, SampleCount, RequestDate, PreferredTime, IsSelfCollection, Note, UserAccountID, ServiceAnhTHQID) 
+VALUES 
+('DNA Test', 'Pending', 1200.00, 2, '2025-05-20 10:00:00', '2025-05-25 09:00:00', 1, 'Urgent booking', 1, 1),
+('Paternity Test', 'Confirmed', 850.00, 1, '2025-05-18 14:00:00', '2025-05-23 10:30:00', 0, 'First-time client', 2, 2),
+('Ancestry', 'Cancelled', 500.00, 1, '2025-05-15 16:00:00', '2025-05-22 11:00:00', 1, 'Rescheduled', 3, 3),
+('Immigration DNA', 'Completed', 1500.00, 3, '2025-05-12 09:00:00', '2025-05-20 13:00:00', 0, 'Embassy requested', 1, 1),
+('Prenatal Test', 'Pending', 2000.00, 1, '2025-05-21 11:30:00', '2025-05-28 08:30:00', 1, 'Sensitive case', 2, 2),
+('DNA Test', 'Confirmed', 1300.00, 2, '2025-05-19 10:15:00', '2025-05-24 10:00:00', 0, '', 3, 3),
+('Paternity Test', 'Pending', 900.00, 1, '2025-05-22 12:45:00', '2025-05-27 11:45:00', 1, 'Follow-up required', 1, 1),
+('Immigration DNA', 'Confirmed', 1550.00, 2, '2025-05-17 15:00:00', '2025-05-26 14:00:00', 0, '', 2, 2),
+('Ancestry', 'Completed', 480.00, 1, '2025-05-10 10:30:00', '2025-05-19 09:30:00', 1, 'Repeat customer', 3, 3),
+('DNA Test', 'Cancelled', 1100.00, 2, '2025-05-14 08:30:00', '2025-05-21 09:00:00', 0, 'Cancelled by user', 1, 1);
+
+INSERT INTO ServicePriceListAnhTHQ
+(ServiceAnhTHQID, BasePrice, AdditionalFee, EffectiveDate, ExpiryDate, IsAvailable)
+VALUES
+(1, 1000.00, 200.00, '2025-05-01', '2025-12-31', 1),
+(2, 800.00, 150.00, '2025-05-01', '2025-11-30', 1),
+(3, 950.00, 100.00, '2025-06-01', '2025-12-31', 1),
+(4, 1200.00, 250.00, '2025-05-15', '2025-10-31', 1),
+(5, 750.00, 180.00, '2025-06-10', '2025-12-01', 1),
+(1, 1100.00, 220.00, '2026-01-01', '2026-06-30', 0),
+(2, 850.00, 170.00, '2026-01-01', '2026-06-30', 0),
+(3, 970.00, 120.00, '2026-01-01', '2026-07-31', 0);

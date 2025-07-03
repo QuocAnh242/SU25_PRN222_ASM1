@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.EntityFrameworkCore;
-using DNATestServiceManager.Repositories.AnhTHQ.DBContext;
 using DNATestServiceManager.Repositories.AnhTHQ.Models;
 using DNATestServiceManager.Services.AnhTHQ;
 using Microsoft.AspNetCore.Authorization;
@@ -16,49 +11,49 @@ namespace DNATestServiceManager.RazorWebApp.AnhTHQ.Pages.ServicesAnhThq
     public class DeleteModel : PageModel
     {
         private readonly IServicesAnhTHQService _servicesAnhTHQService;
+        private readonly IServicePriceListAnhTHQService _servicePriceListAnhTHQService;
 
-        public DeleteModel(IServicesAnhTHQService servicesAnhTHQService)
+        public DeleteModel(
+            IServicesAnhTHQService servicesAnhTHQService,
+            IServicePriceListAnhTHQService servicePriceListAnhTHQService)
         {
             _servicesAnhTHQService = servicesAnhTHQService;
+            _servicePriceListAnhTHQService = servicePriceListAnhTHQService;
         }
 
         [BindProperty]
         public ServiceAnhThq ServicesAnhThq { get; set; } = default!;
 
+        public int RelatedPriceCount { get; set; }
+
         public async Task<IActionResult> OnGetAsync(int id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
             var servicesanhthq = await _servicesAnhTHQService.GetByIdAsync(id);
+            if (servicesanhthq == null) return NotFound();
 
-            if (servicesanhthq == null)
-            {
-                return NotFound();
-            }
-            else
-            {
-                ServicesAnhThq = servicesanhthq;
-            }
+            ServicesAnhThq = servicesanhthq;
+
+            // Kiểm tra xem có ServicePriceList liên quan không
+            var relatedPrices = await _servicePriceListAnhTHQService.GetAllAsync();
+            RelatedPriceCount = relatedPrices.Count(x => x.ServiceAnhThqid == id);
+
             return Page();
         }
 
         public async Task<IActionResult> OnPostAsync(int id)
         {
-            if (id == null)
+            var relatedPrices = await _servicePriceListAnhTHQService.GetAllAsync();
+            var count = relatedPrices.Count(x => x.ServiceAnhThqid == id);
+
+            if (count > 0)
             {
-                return NotFound();
+                ServicesAnhThq = await _servicesAnhTHQService.GetByIdAsync(id);
+                RelatedPriceCount = count;
+                ModelState.AddModelError(string.Empty, $"Không thể xóa vì còn {count} giá dịch vụ liên quan.");
+                return Page();
             }
 
-            var servicesanhthq = await _servicesAnhTHQService.GetByIdAsync(id);
-            if (servicesanhthq != null)
-            {
-                ServicesAnhThq = servicesanhthq;
-                await _servicesAnhTHQService.DeleteAsync(id);
-            }
-
+            await _servicesAnhTHQService.DeleteAsync(id);
             return RedirectToPage("./Index");
         }
     }

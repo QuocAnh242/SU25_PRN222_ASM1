@@ -14,6 +14,7 @@ public class ServicesAnhTHQRepository : GenericRepository<ServicesAnhTHQReposito
         return await _context.ServicesAnhThqs
             .Include(s => s.ServicePriceListAnhThqs)
             .ToListAsync();
+
     }
 
     public async Task<ServiceAnhThq> GetByIdAsync(int id)
