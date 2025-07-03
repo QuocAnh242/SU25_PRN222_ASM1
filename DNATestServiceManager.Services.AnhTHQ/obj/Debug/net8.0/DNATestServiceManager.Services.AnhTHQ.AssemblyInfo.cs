@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DNATestServiceManager.Services.AnhTHQ")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8dee005c13c6e3b34b772fef9debd438626724e9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a3147d26854ac8a03f5938a3e6796884687cb6f2")]
 [assembly: System.Reflection.AssemblyProductAttribute("DNATestServiceManager.Services.AnhTHQ")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DNATestServiceManager.Services.AnhTHQ")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

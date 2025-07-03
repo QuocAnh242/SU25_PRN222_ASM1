@@ -35,14 +35,14 @@ public class ServicesAnhTHQRepository : GenericRepository<ServicesAnhTHQReposito
             ?? new ServiceAnhThq();
     }
 
-    public async Task<List<ServiceAnhThq>> SearchAsync(string serviceName, string serviceType, string category)
+    public async Task<List<ServiceAnhThq>> SearchAsync(string serviceName, string serviceType, decimal? basePrice)
     {
         return await _context.ServicesAnhThqs
             .Include(s => s.ServicePriceListAnhThqs)
             .Where(s =>
                 (string.IsNullOrEmpty(serviceName) || s.ServiceName.Contains(serviceName)) &&
                 (string.IsNullOrEmpty(serviceType) || s.ServiceType.Contains(serviceType)) &&
-                (string.IsNullOrEmpty(category) || s.Category.Contains(category))
+                (!basePrice.HasValue || s.ServicePriceListAnhThqs.Any(p => p.BasePrice == basePrice.Value))
             )
             .ToListAsync();
     }

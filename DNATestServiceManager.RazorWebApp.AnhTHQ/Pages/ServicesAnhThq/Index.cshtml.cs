@@ -1,13 +1,9 @@
-﻿using DNATestServiceManager.Repositories.AnhTHQ.DBContext;
-using DNATestServiceManager.Repositories.AnhTHQ.Models;
+﻿using DNATestServiceManager.Repositories.AnhTHQ.Models;
 using DNATestServiceManager.Services.AnhTHQ;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.EntityFrameworkCore;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace DNATestServiceManager.RazorWebApp.AnhTHQ.Pages.ServicesAnhThq
@@ -22,11 +18,26 @@ namespace DNATestServiceManager.RazorWebApp.AnhTHQ.Pages.ServicesAnhThq
             _serviceAnhThq = serviceAnhThq;
         }
 
-        public IList<ServiceAnhThq> ServicesAnhThq { get; set; } = default!;
+        public IList<ServiceAnhThq> ServicesAnhThq { get; set; } = new List<ServiceAnhThq>();
+
+        [BindProperty(SupportsGet = true)]
+        public string ServiceName { get; set; }
+
+        [BindProperty(SupportsGet = true)]
+        public string ServiceType { get; set; }
+
+        [BindProperty(SupportsGet = true)]
+        public decimal? BasePrice { get; set; }
 
         public async Task OnGetAsync()
         {
             ServicesAnhThq = await _serviceAnhThq.GetAllAsync();
+        }
+
+        public async Task<IActionResult> OnPostAsync()
+        {
+            ServicesAnhThq = await _serviceAnhThq.SearchAsync(ServiceName, ServiceType, BasePrice);
+            return Page();
         }
     }
 }

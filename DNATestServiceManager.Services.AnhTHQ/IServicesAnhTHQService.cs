@@ -6,7 +6,7 @@ namespace DNATestServiceManager.Services.AnhTHQ
     {
         Task<List<ServiceAnhThq>> GetAllAsync();
         Task<ServiceAnhThq> GetByIdAsync(int id);
-        Task<List<ServiceAnhThq>> SearchAsync(string serviceName, string serviceType, string category);
+        Task<List<ServiceAnhThq>> SearchAsync(string serviceName, string serviceType, decimal? basePrice);
         Task<int> CreateAsync(ServiceAnhThq servicesAnhThq);
         Task<int> UpdateAsync(ServiceAnhThq serviceAnhThq);
         Task<int> DeleteAsync(int id);

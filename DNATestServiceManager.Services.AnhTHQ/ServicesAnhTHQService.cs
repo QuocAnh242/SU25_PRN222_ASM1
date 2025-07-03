@@ -25,9 +25,9 @@ namespace DNATestServiceManager.Services.AnhTHQ
             return await _repository.GetByIdAsync(id);
         }
 
-        public async Task<List<ServiceAnhThq>> SearchAsync(string serviceName, string serviceType, string category)
+        public async Task<List<ServiceAnhThq>> SearchAsync(string serviceName, string serviceType, decimal? basePrice)
         {
-            return await _repository.SearchAsync(serviceName, serviceType, category);
+            return await _repository.SearchAsync(serviceName, serviceType, basePrice);
         }
 
         public async Task<int> CreateAsync(ServiceAnhThq servicesAnhThq)
