@@ -13,7 +13,7 @@
     <div class="col-md-4">
         <form id="editForm" method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" name="ServicesAnhThq.ServiceAnhThqid" value="@Model.ServicesAnhThq.ServiceAnhThqid" />
+            <input type="hidden" asp-for="ServicesAnhThq.ServiceAnhThqid" />
                 <div class="form-group">
                 <label asp-for="ServicesAnhThq.ServiceName" class="control-label"></label>
                 <input asp-for="ServicesAnhThq.ServiceName" class="form-control" id="ServicesAnhThq_ServiceName" />
@@ -116,6 +116,15 @@
         connection.on("Receiver_UpdateServicesAnhTHQ", function (item) {
             console.log("Broadcast: service updated:", item);
         });
+
+        connection.on("HubUpdateFailed", function (errors) {
+            let message = "❌ Update failed due to validation errors:\n";
+            errors.forEach(error => {
+                message += `• ${error.errorMessage}\n`;
+            });
+            alert(message);
+        });
+
     </script>
 
 }

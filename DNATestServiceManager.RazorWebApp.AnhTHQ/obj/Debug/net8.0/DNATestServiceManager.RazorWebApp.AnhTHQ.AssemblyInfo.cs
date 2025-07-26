@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DNATestServiceManager.RazorWebApp.AnhTHQ")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a3147d26854ac8a03f5938a3e6796884687cb6f2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5d6f44b34fcf9851e1df87729ef46b39fe2e0c7b")]
 [assembly: System.Reflection.AssemblyProductAttribute("DNATestServiceManager.RazorWebApp.AnhTHQ")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DNATestServiceManager.RazorWebApp.AnhTHQ")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

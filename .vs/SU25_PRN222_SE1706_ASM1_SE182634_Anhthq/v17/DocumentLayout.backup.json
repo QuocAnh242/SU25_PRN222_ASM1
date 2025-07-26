@@ -1,20 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Admin\\OneDrive\\Desktop\\PRN222\\SU25_PRN222_SE1706_ASM1_SE182634_AnhTHQ\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{CDEA944B-7FE4-49A4-B753-21D3E4D4196E}|DNATestServiceManager.RazorWebApp.AnhTHQ\\DNATestServiceManager.RazorWebApp.AnhTHQ.csproj|c:\\users\\admin\\onedrive\\desktop\\prn222\\su25_prn222_se1706_asm1_se182634_anhthq\\dnatestservicemanager.razorwebapp.anhthq\\pages\\servicesanhthq\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{CDEA944B-7FE4-49A4-B753-21D3E4D4196E}|DNATestServiceManager.RazorWebApp.AnhTHQ\\DNATestServiceManager.RazorWebApp.AnhTHQ.csproj|solutionrelative:dnatestservicemanager.razorwebapp.anhthq\\pages\\servicesanhthq\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CDEA944B-7FE4-49A4-B753-21D3E4D4196E}|DNATestServiceManager.RazorWebApp.AnhTHQ\\DNATestServiceManager.RazorWebApp.AnhTHQ.csproj|c:\\users\\admin\\onedrive\\desktop\\prn222\\su25_prn222_se1706_asm1_se182634_anhthq\\dnatestservicemanager.razorwebapp.anhthq\\pages\\servicesanhthq\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CDEA944B-7FE4-49A4-B753-21D3E4D4196E}|DNATestServiceManager.RazorWebApp.AnhTHQ\\DNATestServiceManager.RazorWebApp.AnhTHQ.csproj|solutionrelative:dnatestservicemanager.razorwebapp.anhthq\\pages\\servicesanhthq\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ECEACF64-2ED1-4D4A-895D-58EC474CC75E}|DNATestServiceManager.Services.AnhTHQ\\DNATestServiceManager.Services.AnhTHQ.csproj|c:\\users\\admin\\onedrive\\desktop\\prn222\\su25_prn222_se1706_asm1_se182634_anhthq\\dnatestservicemanager.services.anhthq\\servicesanhthqservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ECEACF64-2ED1-4D4A-895D-58EC474CC75E}|DNATestServiceManager.Services.AnhTHQ\\DNATestServiceManager.Services.AnhTHQ.csproj|solutionrelative:dnatestservicemanager.services.anhthq\\servicesanhthqservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -22,51 +9,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 169,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": -1,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Index.cshtml.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\OneDrive\\Desktop\\PRN222\\SU25_PRN222_SE1706_ASM1_SE182634_AnhTHQ\\DNATestServiceManager.RazorWebApp.AnhTHQ\\Pages\\ServicesAnhThq\\Index.cshtml.cs",
-              "RelativeDocumentMoniker": "DNATestServiceManager.RazorWebApp.AnhTHQ\\Pages\\ServicesAnhThq\\Index.cshtml.cs",
-              "ToolTip": "C:\\Users\\Admin\\OneDrive\\Desktop\\PRN222\\SU25_PRN222_SE1706_ASM1_SE182634_AnhTHQ\\DNATestServiceManager.RazorWebApp.AnhTHQ\\Pages\\ServicesAnhThq\\Index.cshtml.cs",
-              "RelativeToolTip": "DNATestServiceManager.RazorWebApp.AnhTHQ\\Pages\\ServicesAnhThq\\Index.cshtml.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAAACsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-03T08:42:06.556Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Admin\\OneDrive\\Desktop\\PRN222\\SU25_PRN222_SE1706_ASM1_SE182634_AnhTHQ\\DNATestServiceManager.RazorWebApp.AnhTHQ\\Pages\\ServicesAnhThq\\Index.cshtml",
-              "RelativeDocumentMoniker": "DNATestServiceManager.RazorWebApp.AnhTHQ\\Pages\\ServicesAnhThq\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Admin\\OneDrive\\Desktop\\PRN222\\SU25_PRN222_SE1706_ASM1_SE182634_AnhTHQ\\DNATestServiceManager.RazorWebApp.AnhTHQ\\Pages\\ServicesAnhThq\\Index.cshtml",
-              "RelativeToolTip": "DNATestServiceManager.RazorWebApp.AnhTHQ\\Pages\\ServicesAnhThq\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-03T08:33:01.514Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ServicesAnhTHQService.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\OneDrive\\Desktop\\PRN222\\SU25_PRN222_SE1706_ASM1_SE182634_AnhTHQ\\DNATestServiceManager.Services.AnhTHQ\\ServicesAnhTHQService.cs",
-              "RelativeDocumentMoniker": "DNATestServiceManager.Services.AnhTHQ\\ServicesAnhTHQService.cs",
-              "ToolTip": "C:\\Users\\Admin\\OneDrive\\Desktop\\PRN222\\SU25_PRN222_SE1706_ASM1_SE182634_AnhTHQ\\DNATestServiceManager.Services.AnhTHQ\\ServicesAnhTHQService.cs",
-              "RelativeToolTip": "DNATestServiceManager.Services.AnhTHQ\\ServicesAnhTHQService.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAABcAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-03T08:29:34.758Z",
-              "EditorCaption": ""
             }
           ]
         },
@@ -74,6 +21,10 @@
           "DockedWidth": 231,
           "SelectedChildIndex": -1,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:7:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
@@ -121,14 +72,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:6:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:7:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
             }
           ]
         },

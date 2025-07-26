@@ -122,5 +122,13 @@
         connection.on("HubCreateSuccess", function (serviceName) {
             alert(`✔ Dịch vụ "${serviceName}" đã được tạo thành công qua SignalR!`);
         });
+
+        connection.on("HubCreateFailed", function (errors) {
+            let message = "❌ Validation failed:\n";
+            errors.forEach(error => {
+                message += `• ${error.errorMessage}\n`;
+            });
+            alert(message);
+        });
     </script>
 }

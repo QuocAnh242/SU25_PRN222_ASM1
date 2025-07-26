@@ -35,7 +35,7 @@ namespace DNATestServiceManager.RazorWebApp.AnhTHQ.Pages.ServicesListPriceAnhThq
         {
             if (!ModelState.IsValid)
             {
-                await LoadServiceListAsync(); // 🔁 Reload dropdown when invalid
+                await LoadServiceListAsync(); 
                 return Page();
             }
 

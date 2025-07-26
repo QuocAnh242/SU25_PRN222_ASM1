@@ -3143,7 +3143,7 @@
       "projectName": "DNATestServiceManager.Services.AnhTHQ",
       "projectPath": "C:\\Users\\Admin\\OneDrive\\Desktop\\PRN222\\SU25_PRN222_SE1706_ASM1_SE182634_AnhTHQ\\DNATestServiceManager.Services.AnhTHQ\\DNATestServiceManager.Services.AnhTHQ.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Admin\\OneDrive\\Desktop\\PRN222\\SU25_PRN222_SE1706_ASM1_SE182634_Anhthq\\DNATestServiceManager.Services.AnhTHQ\\obj\\",
+      "outputPath": "C:\\Users\\Admin\\OneDrive\\Desktop\\PRN222\\SU25_PRN222_SE1706_ASM1_SE182634_AnhTHQ\\DNATestServiceManager.Services.AnhTHQ\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -3202,7 +3202,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.302/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

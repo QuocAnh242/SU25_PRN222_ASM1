@@ -73,11 +73,11 @@
                 <dd class="col-sm-9">
                     @if (Model.ServicesAnhThq.IsActive == true)
                     {
-                        <span class="text-success fw-bold">✅ Active</span>
+                        <span class="text-success fw-bold"> Active</span>
                     }
                     else
                     {
-                        <span class="text-danger fw-bold">❌ Inactive</span>
+                        <span class="text-danger fw-bold"> Inactive</span>
                     }
                 </dd>
             </dl>
@@ -88,22 +88,74 @@
         <a class="btn btn-primary" asp-page="./Edit" asp-route-id="@Model.ServicesAnhThq.ServiceAnhThqid">Edit</a>
         <a class="btn btn-secondary ml-2" asp-page="./Index">Back to List</a>
     </div>
-
+    <script src="~/lib/microsoft/signalr/dist/browser/signalr.js"></script>
     <script>
         "use strict";
 
-        var connection = new signalR.HubConnectionBuilder().withUrl("/DNATestServiceManagerHub").build();
+        const connection = new signalR.HubConnectionBuilder()
+            .withUrl("/DNATestServiceManagerHub")
+            .build();
 
-        connection.start().then(function () {
-            console.log("AnhTHQ: Connected to the SignalR Hub");
-        }).catch(function (err) {
-            return console.error(err.toString());
+        connection.start()
+            .then(() => {
+                console.log("Connected to SignalR Hub.");
+
+                // Gắn sự kiện click SAU khi connection đã sẵn sàng
+                document.getElementById("btnHubUpdate").addEventListener("click", function () {
+                    const dataObj = {
+                        serviceAnhThqid: document.querySelector("[name='ServicesAnhThq.ServiceAnhThqid']").value,
+                        serviceName: document.querySelector("[name='ServicesAnhThq.ServiceName']").value,
+                        serviceType: document.querySelector("[name='ServicesAnhThq.ServiceType']").value,
+                        description: document.querySelector("[name='ServicesAnhThq.Description']").value,
+                        category: document.querySelector("[name='ServicesAnhThq.Category']").value,
+                        createdDate: document.querySelector("[name='ServicesAnhThq.CreatedDate']").value,
+                        createdBy: document.querySelector("[name='ServicesAnhThq.CreatedBy']").value,
+                        modifiedDate: document.querySelector("[name='ServicesAnhThq.ModifiedDate']").value,
+                        modifiedBy: document.querySelector("[name='ServicesAnhThq.ModifiedBy']").value,
+                        isActive: document.querySelector("[name='ServicesAnhThq.IsActive']").checked
+                    };
+
+                    const jsonString = JSON.stringify(dataObj);
+
+                    connection.invoke("HubUpdate_ServicesAnhTHQ", jsonString)
+                        .then(() => {
+                            console.log("Hub update sent");
+                            alert("Hub update successful!");
+                            location.href = "/ServicesAnhThq/Index";
+                        })
+                        .catch(err => console.error("Hub invoke error: " + err.toString()));
+                });
+
+            })
+            .catch(err => console.error("Connection start error: " + err.toString()));
+
+        // Optional broadcast
+            connection.on("Receiver_UpdateServicesAnhTHQ", function (item) {
+            console.log("Broadcast: service updated:", item);
+
+            // Cập nhật UI với dữ liệu mới
+            document.querySelector("#ServicesAnhTHQID dd:nth-of-type(1)").textContent = item.serviceName;
+            document.querySelector("#ServicesAnhTHQID dd:nth-of-type(2)").textContent = item.serviceType;
+            document.querySelector("#ServicesAnhTHQID dd:nth-of-type(3)").textContent = item.description;
+            document.querySelector("#ServicesAnhTHQID dd:nth-of-type(4)").textContent = item.category;
+            document.querySelector("#ServicesAnhTHQID dd:nth-of-type(5)").textContent = formatDate(item.createdDate);
+            document.querySelector("#ServicesAnhTHQID dd:nth-of-type(6)").textContent = item.createdBy;
+            document.querySelector("#ServicesAnhTHQID dd:nth-of-type(7)").textContent = formatDate(item.modifiedDate);
+            document.querySelector("#ServicesAnhTHQID dd:nth-of-type(8)").textContent = item.modifiedBy;
+
+            const isActiveElement = document.querySelector("#ServicesAnhTHQID dd:nth-of-type(9)");
+            isActiveElement.innerHTML = item.isActive
+                ? `<span class="text-success fw-bold"> Active</span>`
+                : `<span class="text-danger fw-bold"> Inactive</span>`;
         });
 
-        connection.on("Receiver_DeleteServicesAnhTHQ", function (CashDepositSlipId) {
-            document.getElementById("servicesAnhTHQTBodyId").innerHTML = "This item had deleted";
+        connection.on("HubUpdateFailed", function (errors) {
+            let message = "Update failed due to validation errors:\n";
+            errors.forEach(error => {
+                message += `• ${error.errorMessage}\n`;
+            });
+            alert(message);
         });
-
 
     </script>
 </div>

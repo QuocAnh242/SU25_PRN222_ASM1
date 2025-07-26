@@ -40,4 +40,17 @@ public partial class ServiceAnhThq
     public virtual ICollection<BookingMinhNDA> BookingMinhNda { get; set; } = new List<BookingMinhNDA>();
 
     public virtual ICollection<ServicePriceListAnhThq> ServicePriceListAnhThqs { get; set; } = new List<ServicePriceListAnhThq>();
+
+    public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+    {
+        if (CreatedDate.HasValue && ModifiedDate.HasValue)
+        {
+            if (CreatedDate.Value > ModifiedDate.Value)
+            {
+                yield return new ValidationResult(
+                    "Created date cannot be later than Modified date.",
+                    new[] { nameof(CreatedDate), nameof(ModifiedDate) });
+            }
+        }
+    }
 }

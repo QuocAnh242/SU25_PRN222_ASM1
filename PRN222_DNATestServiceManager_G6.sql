@@ -242,6 +242,19 @@ VALUES
 (N'Forensic DNA Profiling', N'Legal', N'Used in criminal investigations to match DNA evidence.', N'Legal', GETDATE(), 'admin', GETDATE(), 'admin', 1),
 (N'Prenatal DNA Test', N'Medical', N'Used to determine paternity before birth.', N'Medical', GETDATE(), 'admin', GETDATE(), 'admin', 1),
 (N'Sibling DNA Test', N'Genetic', N'Used to verify biological sibling relationships.', N'Family', GETDATE(), 'admin', GETDATE(), 'admin', 1);
+INSERT INTO ServicesAnhTHQ 
+(ServiceName, ServiceType, Description, Category, CreatedDate, CreatedBy, ModifiedDate, ModifiedBy, IsActive) 
+VALUES
+(N'DNA Maternity Test', N'Genetic', N'Confirms biological relationship between a mother and child.', N'Family', GETDATE(), 'admin', GETDATE(), 'admin', 1),
+(N'Immigration DNA Test', N'Legal', N'Required by embassies for immigration processing.', N'Legal', GETDATE(), 'admin', GETDATE(), 'admin', 1),
+(N'Genetic Health Risk Test', N'Medical', N'Identifies potential genetic health risks.', N'Health', GETDATE(), 'admin', GETDATE(), 'admin', 1),
+(N'Twin Zygosity DNA Test', N'Genetic', N'Determines whether twins are identical or fraternal.', N'Family', GETDATE(), 'admin', GETDATE(), 'admin', 1),
+(N'DNA Diet & Fitness Test', N'Medical', N'Analyzes DNA to optimize diet and fitness plan.', N'Wellness', GETDATE(), 'admin', GETDATE(), 'admin', 1),
+(N'DNA Skin Care Test', N'Medical', N'Tailors skincare solutions based on genetic data.', N'Cosmetic', GETDATE(), 'admin', GETDATE(), 'admin', 1),
+(N'DNA Genetic Compatibility', N'Genetic', N'Assesses genetic compatibility between partners.', N'Relationship', GETDATE(), 'admin', GETDATE(), 'admin', 1),
+(N'DNA Test for Organ Transplant Matching', N'Medical', N'Ensures compatibility between donor and recipient.', N'Health', GETDATE(), 'admin', GETDATE(), 'admin', 1),
+(N'DNA Criminal Profiling Extended', N'Legal', N'Advanced profiling for complex legal cases.', N'Legal', GETDATE(), 'admin', GETDATE(), 'admin', 1),
+(N'DNA Historical Relationship Test', N'Genetic', N'Explore familial lineage from historical perspective.', N'Heritage', GETDATE(), 'admin', GETDATE(), 'admin', 1);
 
 	
 INSERT INTO BookingMinhNDA
@@ -269,3 +282,15 @@ VALUES
 (1, 1100.00, 220.00, '2026-01-01', '2026-06-30', 0),
 (2, 850.00, 170.00, '2026-01-01', '2026-06-30', 0),
 (3, 970.00, 120.00, '2026-01-01', '2026-07-31', 0);
+INSERT INTO ServicePriceListAnhTHQ
+(ServiceAnhTHQID, BasePrice, AdditionalFee, EffectiveDate, ExpiryDate, IsAvailable)
+VALUES
+(33, 950.00, 150.00, '2025-06-01', '2025-12-31', 1), -- DNA Maternity Test
+(34, 1350.00, 300.00, '2025-06-05', '2025-12-31', 1), -- Immigration DNA Test
+(35, 1450.00, 200.00, '2025-06-10', '2025-11-30', 1), -- Genetic Health Risk Test
+(36, 1000.00, 180.00, '2025-06-15', '2025-12-15', 1), -- Twin Zygosity DNA Test
+(37, 1150.00, 250.00, '2025-06-20', '2025-12-31', 1), -- DNA Diet & Fitness Test
+(38, 900.00, 130.00, '2025-07-01', '2025-12-31', 1), -- DNA Skin Care Test
+(39, 1000.00, 170.00, '2025-07-05', '2025-12-31', 1), -- DNA Genetic Compatibility
+(40, 1200.00, 190.00, '2025-07-10', '2025-11-30', 1), -- DNA for Organ Transplant
+(41, 1400.00, 220.00, '2025-07-15', '2025-12-31', 1); -- DNA Historical Relationship Test

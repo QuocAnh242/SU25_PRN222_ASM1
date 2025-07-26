@@ -17,7 +17,12 @@
             <input name="ServiceName" class="form-control" placeholder="Tên dịch vụ" value="@Model.ServiceName" />
         </div>
         <div class="col-md-4">
-            <input name="ServiceType" class="form-control" placeholder="Loại dịch vụ" value="@Model.ServiceType" />
+            <select name="ServiceType" class="form-select">
+                <option value="">-- Loại dịch vụ --</option>
+                <option value="Genetic" selected="@(Model.ServiceType == "Genetic")">Genetic</option>
+                <option value="Legal" selected="@(Model.ServiceType == "Legal")">Legal</option>
+                <option value="Medical" selected="@(Model.ServiceType == "Medical")">Medical</option>
+            </select>
         </div>
         <div class="col-md-4">
             <input name="BasePrice" type="number" step="0.01" class="form-control" placeholder="Giá gốc (VNĐ)" value="@Model.BasePrice" />
@@ -116,7 +121,7 @@
 
     // Update
         connection.on("Receiver_UpdateServicesAnhTHQ", function (item) {
-        console.log("Received update:", item); // ✅ Check data format
+        console.log("Received update:", item);
 
         const $row = $(`#servicesAnhTHQTBodyId tr[id='${item.serviceAnhThqid}']`);
 

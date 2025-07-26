@@ -2,6 +2,7 @@
 using DNATestServiceManager.Services.AnhTHQ;
 using Microsoft.AspNetCore.SignalR;
 using Newtonsoft.Json;
+using System.ComponentModel.DataAnnotations;
 using System.Threading.Tasks;
 
 namespace DNATestServiceManager.RazorWebApp.AnhTHQ.Hubs
@@ -25,30 +26,78 @@ namespace DNATestServiceManager.RazorWebApp.AnhTHQ.Hubs
         public async Task HubCreate_ServicesAnhTHQ(string jsonData)
         {
             var item = JsonConvert.DeserializeObject<ServiceAnhThq>(jsonData);
+
+            // Ensure server-side CreatedDate override (you can keep or remove this)
             item.CreatedDate = DateTime.Now;
 
+            // Validate
+            var validationResults = new List<ValidationResult>();
+            var context = new ValidationContext(item, null, null);
+            bool isValid = Validator.TryValidateObject(item, context, validationResults, true);
+
+            // Check for IValidatableObject custom logic (e.g., CreatedDate < ModifiedDate)
+            if (item is IValidatableObject validatable)
+            {
+                foreach (var result in validatable.Validate(context))
+                {
+                    validationResults.Add(result);
+                    isValid = false;
+                }
+            }
+
+            // If not valid, send error back to caller
+            if (!isValid)
+            {
+                await Clients.Caller.SendAsync("HubCreateFailed", validationResults);
+                return;
+            }
+
+            // Save to DB
             var id = await _servicesAnhTHQService.CreateAsync(item);
             item.ServiceAnhThqid = id;
 
+            // Notify all clients with the new item
             var itemJson = JsonConvert.SerializeObject(item);
-
-            // Gửi tới tất cả clients (hiển thị item mới)
             await Clients.All.SendAsync("Receiver_CreateServicesAnhTHQ", itemJson);
 
-            // Gửi riêng cho người tạo (hiển thị thông báo)
+            // Notify creator with success
             await Clients.Caller.SendAsync("HubCreateSuccess", item.ServiceName);
         }
 
-        public async Task HubUpdate_ServicesAnhTHQ(string JsonServicesString)
+        public async Task HubUpdate_ServicesAnhTHQ(string jsonData)
         {
-            var item = JsonConvert.DeserializeObject<ServiceAnhThq>(JsonServicesString);
+            var item = JsonConvert.DeserializeObject<ServiceAnhThq>(jsonData);
 
-            // Cập nhật dữ liệu vào DB trước
+            // Validate the object
+            var validationResults = new List<ValidationResult>();
+            var context = new ValidationContext(item, null, null);
+            bool isValid = Validator.TryValidateObject(item, context, validationResults, true);
+
+            // Support for IValidatableObject custom rules
+            if (item is IValidatableObject validatable)
+            {
+                foreach (var result in validatable.Validate(context))
+                {
+                    validationResults.Add(result);
+                    isValid = false;
+                }
+            }
+
+            if (!isValid)
+            {
+                // Send validation errors to caller
+                await Clients.Caller.SendAsync("HubUpdateFailed", validationResults);
+                return;
+            }
+
+            // If valid, proceed to update
             await _servicesAnhTHQService.UpdateAsync(item);
-            Console.WriteLine("Hub Update ID: " + item.ServiceAnhThqid);
 
-            // Sau đó gửi thông tin cập nhật cho các client
+            // Notify all clients (optional)
             await Clients.All.SendAsync("Receiver_UpdateServicesAnhTHQ", item);
+
+            // Notify caller with success message
+            await Clients.Caller.SendAsync("HubUpdateSuccess", item.ServiceName);
         }
     }
 }
